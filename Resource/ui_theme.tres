@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://b6vg3pi45s144" path="res://Assets/UI/Fonts/m6x11plus.ttf" id="1_4k2lb"]
 
-[sub_resource type="Image" id="Image_047bc"]
+[sub_resource type="Image" id="Image_4k2lb"]
 data = {
 "data": PackedByteArray(255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255),
 "format": "RGBA8",
@@ -12,7 +12,7 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_bjjly"]
-image = SubResource("Image_047bc")
+image = SubResource("Image_4k2lb")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1hnay"]
 content_margin_left = 4.0

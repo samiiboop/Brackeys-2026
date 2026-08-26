@@ -66,6 +66,8 @@ script = ExtResource("8_2sxaq")
 position = Vector2(956, 640)
 script = ExtResource("9_gbnb7")
 
+[node name="OrderTimer" type="Timer" parent="World/Orders" unique_id=608540446]
+
 [node name="Camera2D" type="Camera2D" parent="World" unique_id=910429719]
 anchor_mode = 0
 
