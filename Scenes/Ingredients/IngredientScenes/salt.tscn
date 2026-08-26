@@ -11,6 +11,8 @@ input_pickable = true
 center_of_mass_mode = 1
 center_of_mass = Vector2(0, 100)
 script = ExtResource("1_ltt34")
+salty = 5
+umami = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=317188316]
 texture = ExtResource("2_knwvr")
