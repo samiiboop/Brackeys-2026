@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://crexfvjsy60hf"]
+
+[ext_resource type="Script" uid="uid://d4iy11mobwluu" path="res://Scenes/Ingredients/ingredient.gd" id="1_ibmgi"]
+[ext_resource type="Texture2D" uid="uid://cpaiwunh3kavv" path="res://Assets/Debug/Anchovy.png" id="2_ibmgi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ar56"]
+size = Vector2(32, 120)
+
+[node name="AnchovyPaste" type="RigidBody2D" unique_id=879877751]
+input_pickable = true
+center_of_mass_mode = 1
+center_of_mass = Vector2(0, 100)
+script = ExtResource("1_ibmgi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=317188316]
+texture = ExtResource("2_ibmgi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1150716366]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_4ar56")

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cpvp20aha31ah"]
+
+[ext_resource type="Script" uid="uid://d4iy11mobwluu" path="res://Scenes/Ingredients/ingredient.gd" id="1_mrbrl"]
+[ext_resource type="Texture2D" uid="uid://b1ciig4v5j264" path="res://Assets/Debug/parm.png" id="2_mrbrl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ar56"]
+size = Vector2(136, 104)
+
+[node name="ParmesanCheese" type="RigidBody2D" unique_id=879877751]
+input_pickable = true
+center_of_mass_mode = 1
+center_of_mass = Vector2(0, 100)
+script = ExtResource("1_mrbrl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=317188316]
+texture = ExtResource("2_mrbrl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1150716366]
+position = Vector2(4, 12)
+shape = SubResource("RectangleShape2D_4ar56")

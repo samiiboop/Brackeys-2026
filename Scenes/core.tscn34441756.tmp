@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://dafnlnusuway1"]
+
+[ext_resource type="Script" uid="uid://dxqkorihuh3dm" path="res://Scenes/Ingredients/ingredients.gd" id="1_lstiq"]
+[ext_resource type="Texture2D" uid="uid://bx8vw7iqmfkyo" path="res://Assets/Debug/Salt.png" id="1_pghlq"]
+[ext_resource type="Script" uid="uid://d4iy11mobwluu" path="res://Scenes/Ingredients/ingredient.gd" id="2_lstiq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ar56"]
+size = Vector2(64, 168)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nm2jr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kej5v"]
+size = Vector2(240, 192)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uay87"]
+size = Vector2(1938, 712)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xd87t"]
+size = Vector2(1944, 162)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5g06x"]
+size = Vector2(992, 1168)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1wmh1"]
+size = Vector2(1232, 1168)
+
+[node name="Core" type="Node" unique_id=476695178]
+
+[node name="World" type="Node2D" parent="." unique_id=389654864]
+
+[node name="Ingredients" type="Node2D" parent="World" unique_id=2118007970]
+script = ExtResource("1_lstiq")
+
+[node name="Salt" type="RigidBody2D" parent="World/Ingredients" unique_id=1195358208]
+position = Vector2(1288, 304)
+input_pickable = true
+center_of_mass_mode = 1
+center_of_mass = Vector2(0, 100)
+script = ExtResource("2_lstiq")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Ingredients/Salt" unique_id=52438079]
+texture = ExtResource("1_pghlq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Ingredients/Salt" unique_id=274772282]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_4ar56")
+
+[node name="MousePin" type="PinJoint2D" parent="World/Ingredients" unique_id=383033248]
+position = Vector2(944, 144)
+node_a = NodePath("StaticBody2D")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="World/Ingredients/MousePin" unique_id=189313250]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Ingredients/MousePin/StaticBody2D" unique_id=275991667]
+shape = SubResource("RectangleShape2D_nm2jr")
+
+[node name="Marker2D" type="Marker2D" parent="World/Ingredients" unique_id=835349331]
+position = Vector2(960, 640)
+
+[node name="DepositArea" type="Area2D" parent="World/Ingredients" unique_id=2139788670]
+position = Vector2(960, 280)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Ingredients/DepositArea" unique_id=1774530634]
+position = Vector2(0, 40)
+shape = SubResource("RectangleShape2D_kej5v")
+debug_color = Color(0.9831055, 0, 0.36039197, 0.41960785)
+
+[node name="Camera2D" type="Camera2D" parent="World" unique_id=910429719]
+anchor_mode = 0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="World" unique_id=502446366]
+input_pickable = true
+
+[node name="Top" type="CollisionShape2D" parent="World/StaticBody2D" unique_id=207281057]
+position = Vector2(959, -332)
+shape = SubResource("RectangleShape2D_uay87")
+
+[node name="Bottom" type="CollisionShape2D" parent="World/StaticBody2D" unique_id=1618343564]
+position = Vector2(956, 1009)
+shape = SubResource("RectangleShape2D_xd87t")
+
+[node name="Left" type="CollisionShape2D" parent="World/StaticBody2D" unique_id=1635922242]
+position = Vector2(-480, 504)
+shape = SubResource("RectangleShape2D_5g06x")
+
+[node name="Right" type="CollisionShape2D" parent="World/StaticBody2D" unique_id=1494202839]
+position = Vector2(2520, 496)
+shape = SubResource("RectangleShape2D_1wmh1")

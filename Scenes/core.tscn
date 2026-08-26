@@ -1,0 +1,133 @@
+[gd_scene format=3 uid="uid://dafnlnusuway1"]
+
+[ext_resource type="Script" uid="uid://dxqkorihuh3dm" path="res://Scenes/Ingredients/ingredients.gd" id="1_lstiq"]
+[ext_resource type="PackedScene" uid="uid://c1vlb7pjsvntr" path="res://Scenes/Ingredients/IngredientScenes/salt.tscn" id="2_lstiq"]
+[ext_resource type="PackedScene" uid="uid://cpvp20aha31ah" path="res://Scenes/Ingredients/IngredientScenes/parmcheese.tscn" id="3_gxbf5"]
+[ext_resource type="PackedScene" uid="uid://bm2i2ec8biqgq" path="res://Scenes/Ingredients/IngredientScenes/soysauce.tscn" id="4_gl8j7"]
+[ext_resource type="Texture2D" uid="uid://cvnndh282wkbp" path="res://Assets/Debug/food.png" id="4_gqdy1"]
+[ext_resource type="PackedScene" uid="uid://crexfvjsy60hf" path="res://Scenes/Ingredients/IngredientScenes/anchovypaste.tscn" id="6_kgk8v"]
+[ext_resource type="PackedScene" uid="uid://cagmmnu0pmq66" path="res://Scenes/Ingredients/IngredientScenes/coffee.tscn" id="7_cyfn3"]
+[ext_resource type="Texture2D" uid="uid://i4727xhgk87j" path="res://Assets/Debug/room.png" id="8_cyfn3"]
+[ext_resource type="Texture2D" uid="uid://cmqeijlgxjt25" path="res://Assets/Debug/ServerDebug.png" id="8_gbnb7"]
+[ext_resource type="Texture2D" uid="uid://dfcewxbyrxki1" path="res://Assets/Debug/textbox.png" id="10_2sxaq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kej5v"]
+size = Vector2(336, 248)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uay87"]
+size = Vector2(1938, 712)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xd87t"]
+size = Vector2(1944, 162)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5g06x"]
+size = Vector2(992, 1168)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1wmh1"]
+size = Vector2(1232, 1168)
+
+[node name="Core" type="Node" unique_id=476695178]
+
+[node name="World" type="Node2D" parent="." unique_id=389654864]
+
+[node name="Background" type="Sprite2D" parent="World" unique_id=1140174308]
+texture = ExtResource("8_cyfn3")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Ingredients" type="Node2D" parent="World" unique_id=2118007970]
+script = ExtResource("1_lstiq")
+
+[node name="Salt" parent="World/Ingredients" unique_id=879877751 instance=ExtResource("2_lstiq")]
+position = Vector2(1288, 304)
+
+[node name="MousePin" type="PinJoint2D" parent="World/Ingredients" unique_id=383033248]
+position = Vector2(944, 144)
+node_a = NodePath("StaticBody2D")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="World/Ingredients/MousePin" unique_id=189313250]
+
+[node name="Marker2D" type="Marker2D" parent="World/Ingredients" unique_id=835349331]
+position = Vector2(960, 640)
+
+[node name="ParmesanCheese" parent="World/Ingredients" unique_id=2125785628 instance=ExtResource("3_gxbf5")]
+position = Vector2(304, 496)
+
+[node name="SoySauce" parent="World/Ingredients" unique_id=710426485 instance=ExtResource("4_gl8j7")]
+position = Vector2(592, 432)
+
+[node name="Coffee" parent="World/Ingredients" unique_id=1740512030 instance=ExtResource("6_kgk8v")]
+position = Vector2(1560, 576)
+
+[node name="Coffee2" parent="World/Ingredients" unique_id=404450161 instance=ExtResource("7_cyfn3")]
+position = Vector2(1464, 176)
+
+[node name="Orders" type="Node2D" parent="World" unique_id=1075362355]
+
+[node name="Food" type="Node2D" parent="World/Orders" unique_id=1047910120]
+position = Vector2(952, 560)
+
+[node name="ServerSprite" type="Sprite2D" parent="World/Orders/Food" unique_id=2072583019]
+position = Vector2(-240, 24)
+texture = ExtResource("8_gbnb7")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Orders/Food" unique_id=378548962]
+scale = Vector2(2.2000012, 2.2000012)
+texture = ExtResource("4_gqdy1")
+
+[node name="DepositArea" type="Area2D" parent="World/Orders/Food" unique_id=1335703730]
+position = Vector2(0, -128)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Orders/Food/DepositArea" unique_id=1467275024]
+position = Vector2(8, 0)
+shape = SubResource("RectangleShape2D_kej5v")
+debug_color = Color(0.9831055, 0, 0.36039197, 0.41960785)
+
+[node name="MarginContainer" type="MarginContainer" parent="World/Orders/Food" unique_id=187714682]
+offset_left = -240.0
+offset_top = -504.0
+offset_right = 24.0
+offset_bottom = -254.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="World/Orders/Food/MarginContainer" unique_id=363291375]
+layout_mode = 2
+texture = ExtResource("10_2sxaq")
+region_rect = Rect2(0, 0, 400, 400)
+patch_margin_left = 50
+patch_margin_top = 150
+patch_margin_right = 100
+patch_margin_bottom = 100
+
+[node name="MarginContainer" type="MarginContainer" parent="World/Orders/Food/MarginContainer" unique_id=873176259]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="RichTextLabel" type="RichTextLabel" parent="World/Orders/Food/MarginContainer/MarginContainer" unique_id=1550788987]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Testing the rich text label"
+
+[node name="Camera2D" type="Camera2D" parent="World" unique_id=910429719]
+anchor_mode = 0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="World" unique_id=502446366]
+input_pickable = true
+
+[node name="Top" type="CollisionShape2D" parent="World/StaticBody2D" unique_id=207281057]
+position = Vector2(959, -332)
+shape = SubResource("RectangleShape2D_uay87")
+
+[node name="Bottom" type="CollisionShape2D" parent="World/StaticBody2D" unique_id=1618343564]
+position = Vector2(956, 1009)
+shape = SubResource("RectangleShape2D_xd87t")
+
+[node name="Left" type="CollisionShape2D" parent="World/StaticBody2D" unique_id=1635922242]
+position = Vector2(-480, 504)
+shape = SubResource("RectangleShape2D_5g06x")
+
+[node name="Right" type="CollisionShape2D" parent="World/StaticBody2D" unique_id=1494202839]
+position = Vector2(2520, 496)
+shape = SubResource("RectangleShape2D_1wmh1")
