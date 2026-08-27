@@ -8,8 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://cagmmnu0pmq66" path="res://Scenes/Ingredients/IngredientScenes/coffee.tscn" id="7_cyfn3"]
 [ext_resource type="Script" uid="uid://cxrwqw4expe0g" path="res://Scenes/orders.gd" id="8_2sxaq"]
 [ext_resource type="Texture2D" uid="uid://i4727xhgk87j" path="res://Assets/Debug/room.png" id="8_cyfn3"]
-[ext_resource type="PackedScene" uid="uid://cha2c65a22fex" path="res://Scenes/Orders/food.tscn" id="8_gbnb7"]
-[ext_resource type="Script" uid="uid://ccuq3n1xlw7sc" path="res://Scenes/Orders/food.gd" id="9_gbnb7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uay87"]
 size = Vector2(1938, 712)
@@ -62,11 +60,16 @@ position = Vector2(1464, 176)
 [node name="Orders" type="Node2D" parent="World" unique_id=1075362355]
 script = ExtResource("8_2sxaq")
 
-[node name="Food" parent="World/Orders" unique_id=677163591 instance=ExtResource("8_gbnb7")]
-position = Vector2(956, 640)
-script = ExtResource("9_gbnb7")
-
 [node name="OrderTimer" type="Timer" parent="World/Orders" unique_id=608540446]
+
+[node name="ServerPos1" type="Marker2D" parent="World/Orders" unique_id=1976842002]
+position = Vector2(456, 752)
+
+[node name="ServerPos2" type="Marker2D" parent="World/Orders" unique_id=2108756064]
+position = Vector2(956, 752)
+
+[node name="ServerPos3" type="Marker2D" parent="World/Orders" unique_id=440460975]
+position = Vector2(1456, 752)
 
 [node name="Camera2D" type="Camera2D" parent="World" unique_id=910429719]
 anchor_mode = 0

@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cha2c65a22fex"]
 
+[ext_resource type="Script" uid="uid://ccuq3n1xlw7sc" path="res://Scenes/Orders/food.gd" id="1_5bwoq"]
 [ext_resource type="Texture2D" uid="uid://cmqeijlgxjt25" path="res://Assets/Debug/ServerDebug.png" id="1_k6t10"]
 [ext_resource type="Texture2D" uid="uid://cvnndh282wkbp" path="res://Assets/Debug/food.png" id="2_5bwoq"]
 [ext_resource type="Theme" uid="uid://bu1i4c6dcnewx" path="res://Resource/ui_theme.tres" id="3_aron1"]
@@ -9,6 +10,7 @@
 size = Vector2(336, 248)
 
 [node name="Food" type="Node2D" unique_id=677163591]
+script = ExtResource("1_5bwoq")
 
 [node name="ServerSprite" type="Sprite2D" parent="." unique_id=108615480]
 position = Vector2(-240, 24)
