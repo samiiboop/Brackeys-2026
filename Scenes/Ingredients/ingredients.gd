@@ -16,8 +16,9 @@ var deposit = false
 func _ready() -> void:
 	static_body_2d.mouse_entered.connect(_on_border_entered)
 	
-	#deposit_area.mouse_entered.connect(func(): deposit = true)
-	#deposit_area.mouse_exited.connect(func(): deposit = false)
+	#mouse_entered.connect(func(): deposit = true)
+	#mouse_exited.connect(func(): deposit = false)
+
 
 	for rb in get_children():
 		if rb is RigidBody2D: rb.input_event.connect(_on_input_event.bind(rb))

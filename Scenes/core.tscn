@@ -63,13 +63,16 @@ script = ExtResource("8_2sxaq")
 [node name="OrderTimer" type="Timer" parent="World/Orders" unique_id=608540446]
 
 [node name="ServerPos1" type="Marker2D" parent="World/Orders" unique_id=1976842002]
-position = Vector2(456, 752)
+position = Vector2(1231, 752)
 
 [node name="ServerPos2" type="Marker2D" parent="World/Orders" unique_id=2108756064]
 position = Vector2(956, 752)
 
 [node name="ServerPos3" type="Marker2D" parent="World/Orders" unique_id=440460975]
 position = Vector2(1456, 752)
+
+[node name="ServerSpawn" type="Marker2D" parent="World/Orders" unique_id=1290162167]
+position = Vector2(-220, 752)
 
 [node name="Camera2D" type="Camera2D" parent="World" unique_id=910429719]
 anchor_mode = 0

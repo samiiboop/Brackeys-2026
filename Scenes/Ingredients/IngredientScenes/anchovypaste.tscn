@@ -15,6 +15,7 @@ salty = 2
 umami = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=317188316]
+z_index = 1
 texture = ExtResource("2_ibmgi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1150716366]
