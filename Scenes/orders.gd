@@ -16,6 +16,7 @@ var server_pos_occupance : Dictionary = {
 # References.
 @onready var order_timer: Timer = $OrderTimer
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	order_timer.timeout.connect(_on_order_timer_timeout)
@@ -31,9 +32,10 @@ func _on_order_timer_timeout():
 		food_scene.global_position = $ServerSpawn.global_position
 		food_scene.setup(get_node(slot))
 		server_pos_occupance[slot] = true
+		
 		return
 	order_timer.start(5)
 
 # Dynamically connected when we spawn in a server in on order timeout
 func _on_order_complete():
-	pass
+	pass 

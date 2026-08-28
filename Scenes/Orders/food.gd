@@ -130,10 +130,12 @@ func display_letter():
 	
 
 func _on_deposit_area_body_entered(body):
-	pass
+	if body is Ingredient:
+		body.body_entered()
 
 func _on_deposit_area_body_exited(body):
-	pass
+	if body is Ingredient:
+		body.body_exited()
 func _on_letter_timer_timeout() -> void:
 	print("displaying letter")
 	display_letter()

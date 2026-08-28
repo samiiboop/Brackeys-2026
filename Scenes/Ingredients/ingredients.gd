@@ -16,8 +16,7 @@ var deposit = false
 func _ready() -> void:
 	static_body_2d.mouse_entered.connect(_on_border_entered)
 	
-	#mouse_entered.connect(func(): deposit = true)
-	#mouse_exited.connect(func(): deposit = false)
+
 
 
 	for rb in get_children():
@@ -62,5 +61,4 @@ func _on_border_entered():
 		current_body = null
 
 # Recieved from world
-func _on_update_deposit():
-	pass
+# updates valid deposit zones this is just for the rotating

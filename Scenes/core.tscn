@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dafnlnusuway1"]
 
+[ext_resource type="Script" uid="uid://bppbg0hyii04d" path="res://Scenes/World/world.gd" id="1_gbnb7"]
 [ext_resource type="Script" uid="uid://dxqkorihuh3dm" path="res://Scenes/Ingredients/ingredients.gd" id="1_lstiq"]
 [ext_resource type="PackedScene" uid="uid://c1vlb7pjsvntr" path="res://Scenes/Ingredients/IngredientScenes/salt.tscn" id="2_lstiq"]
 [ext_resource type="PackedScene" uid="uid://cpvp20aha31ah" path="res://Scenes/Ingredients/IngredientScenes/parmcheese.tscn" id="3_gxbf5"]
@@ -24,6 +25,7 @@ size = Vector2(1232, 1168)
 [node name="Core" type="Node" unique_id=476695178]
 
 [node name="World" type="Node2D" parent="." unique_id=389654864]
+script = ExtResource("1_gbnb7")
 
 [node name="Background" type="Sprite2D" parent="World" unique_id=1140174308]
 texture = ExtResource("8_cyfn3")
@@ -51,7 +53,7 @@ position = Vector2(304, 496)
 [node name="SoySauce" parent="World/Ingredients" unique_id=710426485 instance=ExtResource("4_gl8j7")]
 position = Vector2(592, 432)
 
-[node name="Coffee" parent="World/Ingredients" unique_id=1740512030 instance=ExtResource("6_kgk8v")]
+[node name="AnchovyPaste" parent="World/Ingredients" unique_id=1740512030 instance=ExtResource("6_kgk8v")]
 position = Vector2(1560, 576)
 
 [node name="Coffee2" parent="World/Ingredients" unique_id=404450161 instance=ExtResource("7_cyfn3")]
